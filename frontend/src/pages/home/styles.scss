@@ -1,0 +1,32 @@
+$background-color: #EEEEEE;
+
+.content-search {
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  background:#FFE600;
+}
+
+.search {
+  display: flex; 
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  .input {
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+    margin-left: 25px;
+    padding: 0 0 0 15px;
+  }
+
+  .linkHome {
+    display: flex;
+  }
+  
+  .button {
+    background: $background-color;
+    padding: 7px 10px 5px;
+    border-radius: 0 5px 5px 0;
+  }
+}

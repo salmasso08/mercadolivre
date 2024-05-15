@@ -1,0 +1,26 @@
+.item {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+  min-height: 800px;
+  background: #FFFFFF;
+
+  .description {
+    // margin-top: 50px;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      margin: 10px 0;
+      color: #999999;
+      font-size: 16px;
+    }
+  }
+  .second {
+    flex: 1;
+  }
+}
