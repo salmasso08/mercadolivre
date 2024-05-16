@@ -2,20 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import Header from '../../components/header';
 import iconFreeShipping from "../../assets/ic_shipping.png";
-
 import axios from 'axios';
 import './styles.scss';
 
 export default function Result() {
   const [data, setData] = useState(null);
   const term = new URLSearchParams(useLocation().search).get('search');
-
-  const formatPrice = (number, currency) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency,
-    }).format(number);
-  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +21,13 @@ export default function Result() {
 
     fetchData();
   }, [term]);
+
+  const formatPrice = (number, currency) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency,
+    }).format(number);
+  }
 
   return (
     <div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home'
-import Result from './pages/results'
 import Item from './pages/item'
+import Result from './pages/results'
 import ErrorMessage from './components/ErrorMessage'
 
 export default function Routing() {
@@ -14,7 +14,7 @@ export default function Routing() {
         <Route exact path='/items/:id' element={<Item />} />
         <Route
           path="*"
-          element={<ErrorMessage message="Está página não existe" />}
+          element={<ErrorMessage message="No found page" />}
         />
       </Routes>
     </BrowserRouter>
