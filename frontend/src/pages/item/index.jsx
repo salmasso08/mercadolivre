@@ -20,33 +20,47 @@ export default function Items() {
 
     fetchData();
   }, [id]);
-  console.log(data)
 
-  function replaceDescription(data) {
-    if(data?.description) {
-      const descriptionProduct = data?.description
-      const descriptionFormat = descriptionProduct.split('\n')
+  const formatPrice = (number, currency) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency,
+    }).format(number);
+  }
+
+  function replaceDescription(description) {
+    if (description) {
+      const descriptionFormat = description.split('\n')
       return descriptionFormat.map((linha, index) => (
         <p key={index}>{linha}</p>
       ))
     }
   }
 
+  function breadcrumb(crumb) {
+    const crumbs = crumb.join(" > ");
+    return crumbs
+  }
+
   return (
-    <>
+    <section>
       <Header />
+      <span className="crumbs">{breadcrumb(data?.path)}</span>
       <div className="item">
-        <div className="description"> 
-         <img src={data.picture_url} alt={data.title} />
-    
+        <div className="description">
+          <img src={data?.picture_url} alt={data?.title} />
+
           <h2>Descrição do produto</h2>
-          {replaceDescription(data)}
+          {replaceDescription(data?.description)}
         </div>
-        <div className="second">
-          <p>Second</p>
+        <div className="contentProduct">
+          {data?.condition ? <p className="condition">Novo</p> : ''}
+          <p className="titleProduct">{data?.title}</p>
+          <p className="priceProduct">{formatPrice(data?.price?.decimals, data?.price?.currency)}</p>
+          <button className="buyButton">Comprar</button>
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

@@ -7,11 +7,15 @@
   min-height: 800px;
   background: #FFFFFF;
 
+  @media screen and (max-width:800px) {
+    flex-direction:column;
+  }
+  
   .description {
-    // margin-top: 50px;
-
+    
     h2 {
       font-size: 28px;
+      margin-top: 50px;
     }
 
     p {
@@ -20,7 +24,45 @@
       font-size: 16px;
     }
   }
-  .second {
-    flex: 1;
+  .contentProduct {
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px 0 0;
+
+    .condition {
+      font-size: 14px;
+      margin-top: 32px;
+    }
+
+    .titleProduct {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 32px;
+    }
+
+    .priceProduct {
+      font-size: 46px;
+      font-weight: bold;
+      margin-top: 32px;
+    }
+
+    .buyButton {
+      background: #3483FA;
+      color: #FFFFFF;
+      margin-top: 32px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.crumbs {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 16px auto;
+
+  @media screen and (max-width:1280px) {
+    padding: 0 10px;
   }
 }

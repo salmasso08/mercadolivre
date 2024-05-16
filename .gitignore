@@ -1,0 +1,23 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Arquivos de build ou output do editor
+/build
+/out
+
+# Arquivos de configuração de IDEs
+/.vscode
+.idea
+
+# Arquivos de cache
+.cache
